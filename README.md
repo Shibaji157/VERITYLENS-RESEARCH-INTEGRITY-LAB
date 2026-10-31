@@ -78,7 +78,9 @@ The model and HTTPS base URL can be changed for a compatible provider. Never put
 
 ## Live demo
 
-**Status: deployment is being prepared.** The public demo link will be added here after the Streamlit Community Cloud deployment has been created and verified. Until then, run the app locally using the Quick start. Do not treat the repository URL as a live app.
+**Live app:** [Open VerityLens AI on Streamlit Community Cloud](https://veritylens-research-integrity-lab-3kawsjsxqxj29xsrn8tpnj.streamlit.app/)
+
+The public app was deployed from the `main` branch and verified in a browser: the synthetic scholarship demo loaded, analyzed three labeled sources, and rendered its findings dashboard. Arbitrary URL fetching is disabled in this public deployment; pasted text and opt-in English Wikipedia query search remain available.
 
 ### Deploy to Streamlit Community Cloud
 
@@ -87,9 +89,9 @@ The model and HTTPS base URL can be changed for a compatible provider. Never put
 3. Create an app from `Shibaji157/VERITYLENS-RESEARCH-INTEGRITY-LAB`, branch `main`, entry point `app.py`.
 4. Leave `VERITYLENS_ENABLE_URL_FETCH` unset. Direct arbitrary URL fetching is disabled by default for public deployments; pasted text and the opt-in Wikipedia search remain available.
 5. Add AI provider secrets only in the Community Cloud app settings if you choose to enable that feature; never commit them.
-6. Wait for the app health check, open its generated `*.streamlit.app` URL, and verify the synthetic demo and query workflow. Replace the status above with the verified live URL.
+6. Wait for the app health check, open its generated `*.streamlit.app` URL, and verify the synthetic demo and query workflow.
 
-Public deployment requires accepting the hosting provider's terms and authorizing the user's GitHub account. DNS-rebinding/SSRF risks mean direct URL fetching must remain disabled unless a hardened, network-isolated fetch service is added.
+DNS-rebinding/SSRF risks mean direct URL fetching must remain disabled on public hosting unless a hardened, network-isolated fetch service is added.
 
 ## 3. Demonstration (3 minutes)
 
@@ -202,7 +204,7 @@ The tests cover the end-to-end synthetic workflow, conflicts and cross-cycle han
 
 ## 9. Deployment guidance
 
-For local use, follow the Quick start. A Streamlit Community Cloud deployment can use the repository root, `app.py` as the entry point, and `requirements.txt` for dependencies. Do not deploy URL retrieval publicly until the documented DNS-rebinding/SSRF limitation is mitigated with network-level egress controls or URL collection is disabled. Configure any AI key only through the host's secret/environment-variable facility. No deployment has been created or verified as part of this project.
+For local use, follow the Quick start. The verified Streamlit Community Cloud deployment uses the repository root, `app.py` as the entry point, and `requirements.txt` for dependencies. Direct URL retrieval is disabled by default, including on the public app; do not enable it publicly until the documented DNS-rebinding/SSRF limitation is mitigated with network-level egress controls. Configure any AI key only through the host's secret/environment-variable facility. The live app is linked above.
 
 ## 10. Troubleshooting
 
@@ -223,4 +225,4 @@ For local use, follow the Quick start. A Streamlit Community Cloud deployment ca
 - [ ] Submit by **1 November 2026, 5:00 PM**, per the official PDF (verify which local time zone the portal uses).
 - [ ] Add deployed demo, video, and slides only if ready; the official PDF says they are optional.
 
-No GitHub repository, live deployment, external integration, or public search result has been created or verified by this archive.
+The GitHub repository and live Streamlit app are linked above. No live AI provider integration has been configured or verified.

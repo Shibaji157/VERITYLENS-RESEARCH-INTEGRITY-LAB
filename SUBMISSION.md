@@ -18,10 +18,10 @@ The main differentiator is its **evidence-to-action workflow**: a user can move 
 The design prioritizes a testable, auditable core, honest limitations, and explainable findings over an unverified chatbot or unsupported confidence scores.
 
 ## Required repository link
-**Add your genuine, accessible GitHub repository URL here after uploading the code.** Do not invent a URL.
+**Repository:** [https://github.com/Shibaji157/VERITYLENS-RESEARCH-INTEGRITY-LAB](https://github.com/Shibaji157/VERITYLENS-RESEARCH-INTEGRITY-LAB)
 
 ## Optional links
-Only include a live deployment or demo video once the actual destination has been verified. Both are optional in the official PDF.
+**Live demo:** [https://veritylens-research-integrity-lab-3kawsjsxqxj29xsrn8tpnj.streamlit.app/](https://veritylens-research-integrity-lab-3kawsjsxqxj29xsrn8tpnj.streamlit.app/) — deployed and browser-checked; public URL fetching is disabled for safety. Demo video and slides remain optional.
 
 ## 3-minute judge demo
 
