@@ -1,15 +1,31 @@
 # VerityLens AI — Evidence-to-Action Research Review
 
+[![Launch live demo](https://img.shields.io/badge/🚀_Launch-Live_Demo-FF4B4B?logo=streamlit&logoColor=white)](https://veritylens-research-integrity-lab-3kawsjsxqxj29xsrn8tpnj.streamlit.app/) [![GitHub repository](https://img.shields.io/badge/GitHub-Source_Code-181717?logo=github)](https://github.com/Shibaji157/VERITYLENS-RESEARCH-INTEGRITY-LAB) ![Status](https://img.shields.io/badge/status-live-brightgreen)
+
 **Shinchan Online Hackathon 2026 · Digital Dark Spot**
 
-VerityLens AI is an evidence-first research review prototype. Rather than merely summarizing information, it maps **what a selected set of sources mentions**, highlights **potential information gaps**, shows **possible conflicts with exact excerpts**, checks **visible date and cycle signals**, and generates a **prioritized verification checklist**.
+> **Try it now:** [Open the VerityLens live demo →](https://veritylens-research-integrity-lab-3kawsjsxqxj29xsrn8tpnj.streamlit.app/)
 
-> **Integrity notice:** The deterministic baseline is transparent and heuristic. Optional LLM analysis is available only when explicitly configured and consented to; it is not fact verification. No external provider has been configured or live-tested here. Source text, source titles, published dates, and synthetic examples may be unverified. Never use this as the sole basis for a high-stakes decision.
+VerityLens AI is an evidence-first research review app. Instead of only summarizing documents, it organizes what a selected set of sources says, highlights **potential evidence gaps** and **possible conflicts with exact excerpts**, surfaces visible date and cycle signals, and produces a **prioritized verification checklist**.
 
-## 1. Features in this release
+> **Integrity notice:** The deterministic baseline is transparent and heuristic, not fact verification. Optional LLM analysis requires explicit configuration and user consent; no live AI provider is configured. Source text, titles, and dates may be unverified. The scholarship demo is entirely synthetic. Do not rely on this app alone for high-stakes decisions.
+
+**Contents:** [Live demo](#live-demo) · [Features](#features) · [Quick start](#quick-start) · [Demo walkthrough](#demo-walkthrough) · [Architecture](#architecture) · [Security](#security-and-reliability) · [Limitations](#known-limitations) · [Tests](#automated-tests) · [Submission](#submission)
+
+## Live demo
+
+### [🚀 Launch VerityLens AI](https://veritylens-research-integrity-lab-3kawsjsxqxj29xsrn8tpnj.streamlit.app/)
+
+The public Streamlit Community Cloud app is deployed from the `main` branch. Its synthetic scholarship walkthrough was browser-tested: it analyzed three explicitly labeled fictional sources and displayed the findings dashboard.
+
+**Live deployment behavior:** Direct URL fetching is disabled for public-deployment safety. You can paste source text or opt into the English Wikipedia search. The optional AI provider is not configured.
+
+**Source code:** [Shibaji157/VERITYLENS-RESEARCH-INTEGRITY-LAB](https://github.com/Shibaji157/VERITYLENS-RESEARCH-INTEGRITY-LAB)
+
+## Features
 
 - Research question input, optional custom research dimensions.
-- Up to four pasted source documents and up to five publicly accessible HTML or text URLs.
+- Up to four pasted source documents; local direct retrieval of up to five public HTML/text URLs is opt-in. URL retrieval is disabled on the public deployment.
 - Optional English Wikipedia query search, with up to three short, explicitly labeled, editable-encyclopedia extracts.
 - Basic webpage text, page title, same-host canonical URL, available publication metadata, and UTC collection timestamp extraction.
 - Source-by-source retrieval failures, timeout/paywall/unsupported-format messages, and honest missing-date handling.
@@ -28,7 +44,9 @@ VerityLens AI is an evidence-first research review prototype. Rather than merely
 - Deterministic analysis remains available when AI is unconfigured, declined, unavailable, or returns invalid citations; its fallback status is visible.
 - Basic URL safety rules, robots.txt when accessible, timeouts, request/content-size caps, and mocked network tests.
 
-## 2. Quick start — Windows PowerShell in VS Code
+## Quick start
+
+### Windows PowerShell and VS Code
 
 Install **Python 3.10+** and use the declared dependencies (Streamlit 1.55+). In VS Code select **File → Open Folder…** and choose `D:\All Project\Hakathon Project\Shinchan 1\veritylens_phase1`.
 
@@ -76,24 +94,9 @@ python -m streamlit run app.py
 
 The model and HTTPS base URL can be changed for a compatible provider. Never put a real key in source control or screenshots. With a key configured, the form still requires explicit consent before sending the research question and source text to that provider. Do not send private or confidential material. API errors and invalid citations are shown as a deterministic fallback; no provider credentials or response body are written to application logs. `.env.example` is a reference only and is not automatically loaded by this app.
 
-## Live demo
+## Demo walkthrough
 
-**Live app:** [Open VerityLens AI on Streamlit Community Cloud](https://veritylens-research-integrity-lab-3kawsjsxqxj29xsrn8tpnj.streamlit.app/)
-
-The public app was deployed from the `main` branch and verified in a browser: the synthetic scholarship demo loaded, analyzed three labeled sources, and rendered its findings dashboard. Arbitrary URL fetching is disabled in this public deployment; pasted text and opt-in English Wikipedia query search remain available.
-
-### Deploy to Streamlit Community Cloud
-
-1. Push this repository to GitHub.
-2. Sign in to [Streamlit Community Cloud](https://share.streamlit.io/) with an account that can access the repository.
-3. Create an app from `Shibaji157/VERITYLENS-RESEARCH-INTEGRITY-LAB`, branch `main`, entry point `app.py`.
-4. Leave `VERITYLENS_ENABLE_URL_FETCH` unset. Direct arbitrary URL fetching is disabled by default for public deployments; pasted text and the opt-in Wikipedia search remain available.
-5. Add AI provider secrets only in the Community Cloud app settings if you choose to enable that feature; never commit them.
-6. Wait for the app health check, open its generated `*.streamlit.app` URL, and verify the synthetic demo and query workflow.
-
-DNS-rebinding/SSRF risks mean direct URL fetching must remain disabled on public hosting unless a hardened, network-isolated fetch service is added.
-
-## 3. Demonstration (3 minutes)
+### Three-minute synthetic demo
 
 1. Click **Load fictional scholarship demo** in the sidebar.
 2. Read the conspicuous synthetic-material warning. Click **Analyze evidence**.
@@ -115,7 +118,7 @@ For a real demonstration, replace sample text with passages from genuinely acces
 
 The Wikimedia API search endpoint was reachable during development. Network/API availability is not guaranteed; automated tests mock requests.
 
-## 4. Project structure
+## Project structure
 
 ```text
 veritylens_phase1/
@@ -123,7 +126,7 @@ veritylens_phase1/
 ├── veritylens/
 │   ├── __init__.py
 │   ├── models.py           Data contracts for source/claim/report
-│   ├── collector.py        Safe-ish public HTML/text access and extraction
+│   ├── collector.py        Public HTML/text collection and extraction
 │   ├── analysis.py         Optional consent-gated AI and citation validation
 │   ├── engine.py           Coverage, conflicts, freshness, verification plan
 │   ├── demo.py             Fictional controlled scholarship fixture
@@ -143,7 +146,7 @@ veritylens_phase1/
 └── README.md
 ```
 
-## 5. Architecture
+## Architecture
 
 ```text
 Research question + opt-in Wikimedia search / public URLs / pasted documents
@@ -170,7 +173,7 @@ Research question + opt-in Wikimedia search / public URLs / pasted documents
 
 This architecture deliberately isolates collection and analysis from the UI. Deterministic and optional AI-generated citations are validated as literal substrings of collected source text. The AI layer supplements rather than replaces the deterministic baseline.
 
-## 6. Security and reliability
+## Security and reliability
 
 `collector.py` rejects non-HTTP(S) URLs, credentials inside links, nonstandard ports, loopback/localhost, private/reserved IP ranges, and redirects to those destinations. It sets request timeouts and limits readable page size. It checks an accessible robots.txt policy and refuses paths disallowed by that file. When robots.txt is unreachable, the app warns that the policy could not be confirmed; you are responsible for site terms and permissions. It does not bypass login or paywalls.
 
@@ -178,7 +181,7 @@ Source text is only sent to a configured AI service when the user checks the con
 
 **Security limitation:** DNS is resolved during URL validation and again when making the request; DNS rebinding between those stages remains possible. This starter app must **not** be exposed as an unrestricted public URL-fetching service without stronger network egress protection (e.g., a hardened fetch proxy, pinned IP connections, and server network allow/block rules).
 
-## 7. Known analytical limitations
+## Known limitations
 
 - No general live web-search integration. Optional query-based retrieval is limited to English Wikipedia; users may also paste text or provide permitted public URLs.
 - Optional OpenAI-compatible LLM analysis is not enabled by default and has not been live-tested in this workspace. The deterministic baseline remains the guaranteed local path.
@@ -193,7 +196,7 @@ Source text is only sent to a configured AI service when the user checks the con
 - Generic custom-topic analysis is shallow; high-impact uses require manual evidence review.
 - Live network behavior depends on the target site's availability and policies. Automated retrieval tests mock network calls.
 
-## 8. Automated verification
+## Automated tests
 
 ```powershell
 python -m pytest -q
@@ -202,11 +205,11 @@ python -m compileall -q .
 
 The tests cover the end-to-end synthetic workflow, conflicts and cross-cycle handling, missing/modified dates, exact deterministic and AI citation validation, AI fallback and provider timeouts/size limits, URL validation, mocked retrieval and search responses, canonical metadata, paywall/timeout errors, source truncation, and report export. Unit tests mock network calls; a separate manual development check retrieved three live English Wikipedia article extracts for the query `Mars planet`.
 
-## 9. Deployment guidance
+## Deployment
 
 For local use, follow the Quick start. The verified Streamlit Community Cloud deployment uses the repository root, `app.py` as the entry point, and `requirements.txt` for dependencies. Direct URL retrieval is disabled by default, including on the public app; do not enable it publicly until the documented DNS-rebinding/SSRF limitation is mitigated with network-level egress controls. Configure any AI key only through the host's secret/environment-variable facility. The live app is linked above.
 
-## 10. Troubleshooting
+## Troubleshooting
 
 - `py` not found: install Python 3.10+ with the **Add Python to PATH** option, or use `python -m venv .venv`.
 - `No module named streamlit`: select your `.venv` interpreter and reinstall from `requirements.txt`.
@@ -215,7 +218,7 @@ For local use, follow the Quick start. The verified Streamlit Community Cloud de
 - No conflict found: not every differing sentence is comparable; the baseline only compares parsed dates, amounts, and lists.
 - Uncertain coverage: read supporting passages and supply more authoritative/current source material.
 
-## 11. Submission checklist
+## Submission
 
 - [ ] Test start-up and all tabs in your own Windows browser.
 - [ ] Run tests with passing output on your machine.
