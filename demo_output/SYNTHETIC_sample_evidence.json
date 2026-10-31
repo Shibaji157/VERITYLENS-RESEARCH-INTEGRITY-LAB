@@ -1,0 +1,273 @@
+{
+  "goal": "What must I verify for the fictional 2026-27 Meridian Scholars Grant?",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "FICTIONAL programme announcement — 2026-27",
+      "text": "Meridian Scholars Grant — 2026-27 (FICTIONAL DEMO).\nEligibility: Applicants must be enrolled full-time in an undergraduate programme.\nApplication deadline is 15 November 2026.\nDocuments required: identity proof, marksheet, and household income certificate.\nApplication process: Apply online through the fictional programme portal.\nAward amount: INR 30000 per academic year.\nSelection criteria: Selection is based on academic merit.",
+      "url": null,
+      "published_at": "2026-09-20",
+      "canonical_url": null,
+      "collected_at": null,
+      "modified_at": null,
+      "collection_method": "manual",
+      "synthetic": true,
+      "extraction_note": "Controlled synthetic demonstration; not a real official source."
+    },
+    {
+      "id": "S2",
+      "title": "FICTIONAL student guidance — 2026-27",
+      "text": "Meridian Scholars Grant — 2026-27 (FICTIONAL DEMO).\nApplication deadline is 20 November 2026.\nDocuments required: identity proof, marksheet, and self-declared income statement.\nApplication process: Applicants must submit online.",
+      "url": null,
+      "published_at": "2026-10-05",
+      "canonical_url": null,
+      "collected_at": null,
+      "modified_at": null,
+      "collection_method": "manual",
+      "synthetic": true,
+      "extraction_note": "Controlled synthetic demonstration; not a real college website."
+    },
+    {
+      "id": "S3",
+      "title": "FICTIONAL archived notice — 2024-25",
+      "text": "Meridian Scholars Grant — 2024-25 (FICTIONAL ARCHIVE).\nApplication deadline is 12 October 2024.\nRenewal conditions: Award holders needed 75% attendance for renewal in 2024-25.",
+      "url": null,
+      "published_at": "2024-08-10",
+      "canonical_url": null,
+      "collected_at": null,
+      "modified_at": null,
+      "collection_method": "manual",
+      "synthetic": true,
+      "extraction_note": "Controlled synthetic demonstration; previous-cycle fixture."
+    }
+  ],
+  "cycle": "2026-27",
+  "coverage": [
+    {
+      "aspect": "Eligibility",
+      "status": "Evidence located",
+      "claims": [
+        {
+          "source_id": "S1",
+          "aspect": "Eligibility",
+          "quote": "Eligibility: Applicants must be enrolled full-time in an undergraduate programme.",
+          "value": "eligibility: applicants must be enrolled full-time in an undergraduate programme.",
+          "cycle": "2026-27"
+        }
+      ],
+      "explanation": "Relevant passages were located; keyword-based screening does not establish completeness or truth."
+    },
+    {
+      "aspect": "Application deadline",
+      "status": "Possible conflict",
+      "claims": [
+        {
+          "source_id": "S1",
+          "aspect": "Application deadline",
+          "quote": "Application deadline is 15 November 2026.",
+          "value": "2026-11-15",
+          "cycle": "2026-27"
+        },
+        {
+          "source_id": "S2",
+          "aspect": "Application deadline",
+          "quote": "Application deadline is 20 November 2026.",
+          "value": "2026-11-20",
+          "cycle": "2026-27"
+        },
+        {
+          "source_id": "S3",
+          "aspect": "Application deadline",
+          "quote": "Application deadline is 12 October 2024.",
+          "value": "2024-10-12",
+          "cycle": "2024-25"
+        }
+      ],
+      "explanation": "Comparable source statements differ. See the Conflict Explorer; context may explain them."
+    },
+    {
+      "aspect": "Required documents",
+      "status": "Possible conflict",
+      "claims": [
+        {
+          "source_id": "S1",
+          "aspect": "Required documents",
+          "quote": "Documents required: identity proof, marksheet, and household income certificate.",
+          "value": "and household income certificate | identity proof | marksheet",
+          "cycle": "2026-27"
+        },
+        {
+          "source_id": "S2",
+          "aspect": "Required documents",
+          "quote": "Documents required: identity proof, marksheet, and self-declared income statement.",
+          "value": "and self-declared income statement | identity proof | marksheet",
+          "cycle": "2026-27"
+        }
+      ],
+      "explanation": "Comparable source statements differ. See the Conflict Explorer; context may explain them."
+    },
+    {
+      "aspect": "Renewal conditions",
+      "status": "Previous-cycle evidence only",
+      "claims": [
+        {
+          "source_id": "S3",
+          "aspect": "Renewal conditions",
+          "quote": "Renewal conditions: Award holders needed 75% attendance for renewal in 2024-25.",
+          "value": "renewal conditions: award holders needed 75% attendance for renewal in 2024-25.",
+          "cycle": "2024-25"
+        }
+      ],
+      "explanation": "Only non-target-cycle passages were found; current applicability is not established."
+    },
+    {
+      "aspect": "Application process",
+      "status": "Evidence located",
+      "claims": [
+        {
+          "source_id": "S1",
+          "aspect": "Application process",
+          "quote": "Application process: Apply online through the fictional programme portal.",
+          "value": "application process: apply online through the fictional programme portal.",
+          "cycle": "2026-27"
+        },
+        {
+          "source_id": "S2",
+          "aspect": "Application process",
+          "quote": "Application process: Applicants must submit online.",
+          "value": "application process: applicants must submit online.",
+          "cycle": "2026-27"
+        }
+      ],
+      "explanation": "Relevant passages were located; keyword-based screening does not establish completeness or truth."
+    },
+    {
+      "aspect": "Award amount",
+      "status": "Evidence located",
+      "claims": [
+        {
+          "source_id": "S1",
+          "aspect": "Award amount",
+          "quote": "Award amount: INR 30000 per academic year.",
+          "value": "30000",
+          "cycle": "2026-27"
+        }
+      ],
+      "explanation": "Relevant passages were located; keyword-based screening does not establish completeness or truth."
+    },
+    {
+      "aspect": "Selection criteria",
+      "status": "Evidence located",
+      "claims": [
+        {
+          "source_id": "S1",
+          "aspect": "Selection criteria",
+          "quote": "Selection criteria: Selection is based on academic merit.",
+          "value": "selection criteria: selection is based on academic merit.",
+          "cycle": "2026-27"
+        }
+      ],
+      "explanation": "Relevant passages were located; keyword-based screening does not establish completeness or truth."
+    },
+    {
+      "aspect": "Official contact",
+      "status": "Not found in reviewed sources",
+      "claims": [],
+      "explanation": "No relevant passage was located in the inspected text. This does not prove it does not exist."
+    }
+  ],
+  "conflicts": [
+    {
+      "aspect": "Application deadline",
+      "first": {
+        "source_id": "S1",
+        "aspect": "Application deadline",
+        "quote": "Application deadline is 15 November 2026.",
+        "value": "2026-11-15",
+        "cycle": "2026-27"
+      },
+      "second": {
+        "source_id": "S2",
+        "aspect": "Application deadline",
+        "quote": "Application deadline is 20 November 2026.",
+        "value": "2026-11-20",
+        "cycle": "2026-27"
+      },
+      "explanation": "Different explicit deadline dates; confirm applicability and latest official notice.",
+      "label": "Possible discrepancy — verify context"
+    },
+    {
+      "aspect": "Required documents",
+      "first": {
+        "source_id": "S1",
+        "aspect": "Required documents",
+        "quote": "Documents required: identity proof, marksheet, and household income certificate.",
+        "value": "and household income certificate | identity proof | marksheet",
+        "cycle": "2026-27"
+      },
+      "second": {
+        "source_id": "S2",
+        "aspect": "Required documents",
+        "quote": "Documents required: identity proof, marksheet, and self-declared income statement.",
+        "value": "and self-declared income statement | identity proof | marksheet",
+        "cycle": "2026-27"
+      },
+      "explanation": "The stated required-document lists differ; these could be alternatives or incomplete lists.",
+      "label": "Possible discrepancy — verify context"
+    }
+  ],
+  "freshness": [
+    {
+      "source_id": "S3",
+      "label": "Previous or different cycle",
+      "explanation": "Visible 2024-25; research target is 2026-27. Applicability is unverified."
+    },
+    {
+      "source_id": "S3",
+      "label": "Older publication metadata",
+      "explanation": "Visible publication metadata 2024-08-10 may be unsuitable for current deadlines; verify it."
+    }
+  ],
+  "actions": [
+    {
+      "aspect": "Application deadline",
+      "priority": "High",
+      "task": "Resolve the differing source statements for application deadline using a current authoritative source.",
+      "reason": "Comparable source statements differ. See the Conflict Explorer; context may explain them.",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "aspect": "Renewal conditions",
+      "priority": "High",
+      "task": "Verify the current requirements for renewal conditions using a current authoritative source.",
+      "reason": "Only non-target-cycle passages were found; current applicability is not established.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "aspect": "Required documents",
+      "priority": "High",
+      "task": "Resolve the differing source statements for required documents using a current authoritative source.",
+      "reason": "Comparable source statements differ. See the Conflict Explorer; context may explain them.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "aspect": "Official contact",
+      "priority": "Medium",
+      "task": "Verify the current requirements for official contact using a current authoritative source.",
+      "reason": "No relevant passage was located in the inspected text. This does not prove it does not exist.",
+      "source_ids": []
+    }
+  ],
+  "method_note": "The deterministic baseline uses keyword-based aspect screening and compares explicitly parsed deadlines, amounts, and document lists. Optional AI analysis is separate, consent-gated, and citation-validated when configured. Neither layer independently verifies source truth.",
+  "collection_failures": [],
+  "ai_analysis": null
+}
